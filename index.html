@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github-Issue-Tracker || LogIN</title>
-
+   <!-- fav icon  -->
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
     <!-- daisyUI and tailwind cdn link ::: ...... -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -20,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -41,19 +42,19 @@
 
 
                     <div> <label class="font-medium">User Name</label>
-                        <input type="text" class="input outline-none" placeholder="Enter User name : admin" />
+                        <input id="user-name"  type="text" class="input outline-none" placeholder="Enter User name : admin" value="admin"/>
                         <p class="text-[blue]">Default: admin</p>
                     </div>
 
                     <div>
                         <label class="font-medium">Password</label>
-                        <input type="password" class="input outline-none" placeholder="Enter Password: admin123" />
+                        <input id="user-password" type="password" class="input outline-none" placeholder="Enter Password: admin123" value="admin123" />
                         <p>
                         <p class="text-[blue]">Default: admin123</p>
                         </p>
                     </div>
 
-                    <button class="btn btn-primary mt-4">Login</button>
+                    <button id="login-button" class="btn btn-primary mt-4">Login</button>
                 </fieldset>
             </div>
             <div>
