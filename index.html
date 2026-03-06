@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github-Issue-Tracker || LogIN</title>
+
+    <!-- daisyUI and tailwind cdn link ::: ...... -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- all themes link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- font awesome cdn link .... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google font link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body class="bg-[#f8fafc]">
+    <!-- log in box ... -->
+    <section class="h-screen flex items-center justify-center shadow ">
+        <div class="bg-white shadow-xl rounded-md  py-10 px-3 md:px-5 space-y-5 max-w-[350px] md:max-w-[1200px] border-y-10 ">
+            <div class="flex justify-center">
+                <img src="./assets/github-logo.png" alt="github">
+            </div>
+            <div class="text-center">
+                <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
+                <p class="font-light">Sign in to manage your issues</p>
+            </div>
+            <!-- log in form daisyUI -->
+            <div class="">
+                <fieldset class="fieldset rounded-box w-xs  p-4">
+
+
+                    <div> <label class="font-medium">User Name</label>
+                        <input type="text" class="input outline-none" placeholder="Enter User name : admin" />
+                        <p class="text-[blue]">Default: admin</p>
+                    </div>
+
+                    <div>
+                        <label class="font-medium">Password</label>
+                        <input type="password" class="input outline-none" placeholder="Enter Password: admin123" />
+                        <p>
+                        <p class="text-[blue]">Default: admin123</p>
+                        </p>
+                    </div>
+
+                    <button class="btn btn-primary mt-4">Login</button>
+                </fieldset>
+            </div>
+            <div>
+                <p class="text-center">-------------------OR------------------</p>
+               <div class="flex items-center justify-center">
+  <div class="p-6 bg-white rounded-lg text-center">
+    <p class="font-light">Demo Credentials:</p>
+    <div class="mt-2 bg-[#f8fafc] px-5 py-3">
+      <p class="font-bold">Username: <span class="font-mono">admin</span></p>
+      <p class="font-bold">Password: <span class="font-mono">admin123</span></p>
+    </div>
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./js/logIn.js"></script>
+</body>
+
+</html>
