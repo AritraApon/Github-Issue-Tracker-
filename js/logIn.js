@@ -10,7 +10,7 @@ document.getElementById('login-button')
         alert(`Login successful ✅
         Welcome to GitHub Issue Tracker 🎉
 `)
- window.location.assign("/home.html")
+ window.location.assign("./home.html")
     }else{
         alert(` ⚠️ Login Failed
     Your Username and Password is incorrect.
