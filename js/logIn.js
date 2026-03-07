@@ -7,8 +7,8 @@ document.getElementById('login-button')
     const password = userPassword.value;
     // console.log(name , password)
     if(name === 'admin' && password === 'admin123'){
-        alert(`Login successful ✅
-        Welcome to GitHub Issue Tracker 🎉
+        alert(`Sing in successful ✅
+ Welcome to GitHub Issue Tracker 🎉
 `)
  window.location.assign("home.html")
     }else{

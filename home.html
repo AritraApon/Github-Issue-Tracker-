@@ -21,34 +21,104 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body class="bg-[#f8fafc]">
-    <header class="max-w-[1500px] mx-auto bg-white shadow">
-        <div class="flex flex-col md:flex-row justify-between py-4 px-3 gap-4"  >
+<body class="bg-[#f8fafc] max-w-[1500px] h-screen mx-auto">
+    <!-- heading section  -->
+    <header class="  bg-white shadow border-b-3">
+        <div class="flex flex-col md:flex-row justify-between py-4 px-3 gap-4">
             <div class="flex items-center">
                 <img src="./assets/github-logo.png" alt="" class="w-10">
                 <p class="text-xl font-bold">GitHub Issues Tracker</p>
             </div>
             <!-- search button ......... -->
             <div class="flex items-center gap-2">
-                <label class="input">
-                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <label class="input outline-none">
+                    <svg class="h-[1em] opacity-50 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
                             stroke="currentColor">
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input id="search-box" type="search" required placeholder="Search issues" class="outline-none"/>
+                    <input id="search-box" type="search" required placeholder="Search issues" class="outline-none " />
                 </label>
 
-                <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="btn btn-neutral""><i class=" fa-solid fa-magnifying-glass"></i></button>
             </div>
         </div>
     </header>
+
+    <!-- button section ......... -->
+    <section class="w-11/12 mx-auto bg-white shadow mt-3 md:mt- rounded-xl border-b-3">
+       <div class="py-5 px-5 ">
+         <div class="flex items-center gap-3">
+            <button id="all-button" class="active btn btn-outline btn-neutral">All</button>
+            <button id="open-button" class=" btn btn-outline  btn-neutral">Open</button>
+            <button id="close-button" class=" btn btn-outline btn-neutral">Closed</button>
+        </div>
+
+       </div>
+
+    </section>
+
+    <!-- count div number //.. -->
+<section class="w-11/12 mx-auto bg-white shadow mt-3 md:mt-5 rounded-xl border-b-3">
+       <div class="flex flex-col md:flex-row justify-between gap-4 py-5 px-5 ">
+         <div class="flex justify-center items-center gap-3">
+              <div class="w-[30px] h-[30px] bg-[#ece4ff] rounded-full px-1 py-1">
+                <img src="./assets/Aperture.png" alt="">
+              </div>
+              <div>
+                <p class="font-bold text-[1.25rem] "><span id="issues-total">0</span> Issues</p>
+                <p class="font-light text-[12px] md:text-[16px]">Track and manage your project issues</p>
+              </div>
+        </div>
+        <div class="flex items-center gap-3 px-5">
+            <p><span><i class="fa-solid fa-circle text-[#00a96e]"></i></span>Open</p>
+            <p><span><i class="fa-solid fa-circle  text-[#a855f7]"></i></span>Close</p>
+
+        </div>
+       </div>
+
+    </section>
+
+     <!-- issues container ..... -->
+    <section  class="w-11/12 mx-auto bg-base-50">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+
+            <!-- card.......  -->
+            <!-- <div id="card" class="px-5 py-5 bg-white shadow my-5 space-y-5 rounded-2xl border-t-4">
+                 <div class="flex justify-between items-center ">
+                    <img src="./assets/Open-Status.png" alt="">
+                    <p class="px-3 py-1 rounded-2xl border-2 border-[#f6c0c0] font-medium text-[#ef4444] text-center bg-[#feecec] "><span>High</span></p>
+                 </div>
+                 <div>
+                    <h1 class="text-xl md:text-2xl font-bold">Fix navigation menu on mobile devices</h1>
+                    <p class="font-light text-[#6b7a90]">The navigation menu doesn't collapse properly on mobile devices...</p>
+
+                 </div>
+                 <div class="flex items-center gap-2">
+                     <p class="px-3 py-1 rounded-2xl border-2 border-[#f6c0c0] font-medium text-[#ef4444] text-center bg-[#feecec] "><i class="fa-solid fa-bug"></i><span> BUG</span></p>
+                     <p class="px-3 py-1 rounded-2xl border-2 border-[#fde68a] font-medium text-[#d97706] text-center bg-[#fff8db] "><i class="fa-solid fa-life-ring"></i><span> Help wanted</span></p>
+                 </div>
+                 <div class="divider"></div>
+                 <div class="text-[#6b7a90]">
+                    <p><span>#1</span> by <span>author</span></p>
+                    <p>createdAt</p>
+                 </div>
+            </div> -->
+
+           </div>
+
+    </section>
+
+
+
+
+
 
     <script src="./js/home.js"></script>
 </body>

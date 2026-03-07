@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github-Issue-Tracker || LogIN</title>
-   <!-- fav icon  -->
+    <!-- fav icon  -->
     <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
     <!-- daisyUI and tailwind cdn link ::: ...... -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -21,14 +21,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body class="bg-[#f8fafc]">
     <!-- log in box ... -->
     <section class="h-screen flex items-center justify-center shadow ">
-        <div class="bg-white shadow-xl rounded-md  py-10 px-3 md:px-5 space-y-5 max-w-[350px] md:max-w-[1200px] border-y-10 ">
+        <div
+            class="bg-white shadow-xl rounded-md  py-10 px-3 md:px-5 space-y-5 max-w-[350px] md:max-w-[1200px] border-y-10 ">
             <div class="flex justify-center">
                 <img src="./assets/github-logo.png" alt="github">
             </div>
@@ -42,34 +43,38 @@
 
 
                     <div> <label class="font-medium">User Name</label>
-                        <input id="user-name"  type="text" class="input outline-none" placeholder="Enter User name : admin" value="admin"/>
+                        <input id="user-name" type="text" class="input outline-none"
+                            placeholder="Enter User name : admin" value="admin" />
                         <p class="text-[blue]">Default: admin</p>
                     </div>
 
                     <div>
                         <label class="font-medium">Password</label>
-                        <input id="user-password" type="password" class="input outline-none" placeholder="Enter Password: admin123" value="admin123" />
+                        <input id="user-password" type="password" class="input outline-none"
+                            placeholder="Enter Password: admin123" value="admin123" />
                         <p>
                         <p class="text-[blue]">Default: admin123</p>
                         </p>
                     </div>
 
-                    <button id="login-button" class="btn btn-primary mt-4">Login</button>
+                    <button id="login-button" class="btn btn-neutral"mt-4">Sing in</button>
                 </fieldset>
             </div>
             <div>
-                <p class="text-center">-------------------OR------------------</p>
-               <div class="flex items-center justify-center">
-  <div class="p-6 bg-white rounded-lg text-center">
-    <p class="font-light">Demo Credentials:</p>
-    <div class="mt-2 bg-[#f8fafc] px-5 py-3">
-      <p class="font-bold">Username: <span class="font-mono">admin</span></p>
-      <p class="font-bold">Password: <span class="font-mono">admin123</span></p>
-    </div>
-  </div>
-</div>
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="p-6 bg-white rounded-lg text-center">
+                        <p class="font-light">Demo Credentials:</p>
+                        <div class="mt-2 bg-[#f8fafc] px-5 py-3">
+                            <p class="font-bold">Username: <span class="font-mono">admin</span></p>
+                            <p class="font-bold">Password: <span class="font-mono">admin123</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
 
     </section>
