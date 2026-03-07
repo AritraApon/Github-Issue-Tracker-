@@ -40,7 +40,7 @@ const displayIssue = (datas) => {
            <div onclick="loadIssueModal(${data.id})"  id="card" class="issueCard px-5 py-5 bg-white shadow  space-y-5 rounded-2xl border-t-4">
                  <div class="flex justify-between items-center ">
                     <img class="img-open-close" src="./assets/Open-Status.png" alt="">
-                    <p class="px-3 py-1 rounded-2xl  font-medium text-[#ef4444] text-center bg-[#feecec] "><span> ${data.priority}  </span></p>
+                    <p class="issuePriority px-3 py-1 rounded-2xl  font-medium text-[#ef4444] text-center bg-[#feecec] "><span> ${data.priority}  </span></p>
                  </div>
                  <div class = "space-y-3">
                     <h1 class="text-xl md:text-2xl font-bold">${data.title} </h1>
@@ -60,6 +60,7 @@ const displayIssue = (datas) => {
 
          
          `
+        //  status
         const card = issuesCardDiv.querySelector(".issueCard")
         if (data.status === "open") {
             card.classList.add("border-[#00a96e]");
@@ -69,12 +70,22 @@ const displayIssue = (datas) => {
             card.classList.add("border-[#a855f7]");
         }
 
+        // Priority
+        const priority = issuesCardDiv.querySelector(".issuePriority")
+        if (data.priority.toLowerCase() === "medium") {
+            priority.classList.add("bg-[#fff6d1]", "text-[#f8b237]")
+        } else if (data.priority.toLowerCase() === "low") {
+            priority.classList.add("bg-gray-100", "text-gray-400")
+
+        }
+
+        //  console.log(data.priority);
+        //  console.log(priority)
 
         issuesContainer.appendChild(issuesCardDiv)
-
-
-
     });
+
+
     // count ...
     let issuesTotal = document.getElementById('issues-total');
     issuesTotal.textContent = ` ${datas.length}`
@@ -128,8 +139,8 @@ const displayIssueModal = (modals) => {
                         <h3 class="font-medium">${modals.assignee}</h3>
                     </div>
                     <div>
-                        <p class="font-light text-[#6b7a90]">Priority::</p>
-                         <p class=" font-medium text-[11px] text-center w-[70px] px-2 py-1 rounded-full bg-red-700 text-white">
+                        <p class="font-light text-[#6b7a90]">Priority:</p>
+                         <p class="issuePriority font-medium text-[11px] text-center w-[70px] px-2 py-1 rounded-full  text-white">
                        ${modals.priority}
                          </p>
                     </div>
@@ -140,12 +151,31 @@ const displayIssueModal = (modals) => {
 
         
         `;
+
+    // satus bg-red-700
     const card = modalDiv.querySelector(".issueCard")
-    if (modals.status === "open") {
+    if (modals.status.toLowerCase() === "open") {
         card.classList.add("bg-[#00a96e]");
     } else {
         card.classList.add("bg-[#a855f7]");
     }
+
+
+    // Priority
+    const priority = modalDiv.querySelector(".issuePriority")
+    if (modals.priority.toLowerCase() === "high") {
+        priority.classList.add("bg-red-700");
+    }
+    else if (modals.priority.toLowerCase() === "medium") {
+        priority.classList.add("bg-yellow-500");
+    } else {
+        priority.classList.add("bg-gray-500");
+
+
+    }
+    console.log(priority)
+
+
 
     modalContainer.appendChild(modalDiv);
 
