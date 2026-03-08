@@ -1,8 +1,7 @@
-# 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
+# 🌟 Assignment - 5
 
 
-- Clicking on a tree name in a card will open a modal and show all the
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot.
+# Question :
     - 1️⃣ What is the difference between var, let, and const?
     - 2️⃣ What is the spread operator (...)?
     - 3️⃣ What is the difference between map(), filter(), and forEach()?
@@ -10,8 +9,7 @@
     - 5️⃣ What are template literals?
 
 
-
-# JavaScript Quick Notes
+# Answer :
 
 1.   var = function-scoped, let = block-scoped, const = block-scoped + immutable.
 
