@@ -217,6 +217,7 @@ const displayIssueModal = (modals) => {
 
 // filter Issues
 async function filterIssues(status) {
+    manageSpinner(true)
     let res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     let data = await res.json();
 
@@ -228,6 +229,7 @@ async function filterIssues(status) {
         filtered = data.data.filter(issue => issue.status === status);
     }
 
+    manageSpinner(false)
     displayIssue(filtered);
 
 }
