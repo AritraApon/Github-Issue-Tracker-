@@ -40,25 +40,25 @@ const displayIssue = (datas) => {
            <div onclick="loadIssueModal(${data.id})"  id="card" class="issueCard px-5 py-5 bg-white shadow  space-y-5 rounded-2xl border-t-4">
                  <div class="flex justify-between items-center ">
                     <img class="img-open-close" src="./assets/Open-Status.png" alt="">
-                    <p class="issuePriority px-3 py-1 rounded-2xl  font-medium text-[#ef4444] text-center bg-[#feecec] "><span> ${data.priority}  </span></p>
+                    <p class="issuePriority px-3 py-1 rounded-2xl  font-medium text-[#ef4444] text-center bg-[#feecec] "><span> ${data.priority ? data.priority:"No Priority"}  </span></p>
                  </div>
                  <div class = "space-y-3">
-                    <h1 class="text-xl md:text-2xl font-bold">${data.title} </h1>
-                    <p class="font-light line-clamp-2 text-[#6b7a90]">${data.description}</p>
+                    <h1 class="text-xl md:text-2xl font-bold">${data.title ? data.title:"No title"} </h1>
+                    <p class="font-light line-clamp-2 text-[#6b7a90]">${data.description ? data.description:"No Description"}</p>
 
                  </div>
                  <div class="flex items-center gap-2">
-                     <p class="px-3 py-1 text-[12px] rounded-2xl border-2 border-[#f6c0c0] font-medium text-[#ef4444] text-center bg-[#feecec] "><i class="fa-solid fa-bug"></i><span>${data.labels[0] ? data.labels[0] : "No label"} </span></p>
-                     <p class="px-3 py-1 text-[12px] rounded-2xl border-2 border-[#fde68a] font-medium text-[#d97706] text-center bg-[#fff8db] "><i class="fa-solid fa-life-ring"></i><span> ${data.labels[1] ? data.labels[1] : "No label"}</span></p>
+                     <p class="px-3 py-1 text-[12px] rounded-2xl border-2 border-[#f6c0c0] font-medium text-[#ef4444] text-center bg-[#feecec] "><i class="fa-solid fa-bug"></i><span>${data.labels[0] ? data.labels[0] : ""} </span></p>
+                     <p class="px-3 py-1 text-[12px] rounded-2xl border-2 border-[#fde68a] font-medium text-[#d97706] text-center bg-[#fff8db] "><i class="fa-solid fa-life-ring"></i><span> ${data.labels[1] ? data.labels[1] : ""}</span></p>
                  </div>
                  <div class="divider"></div>
                  <div class="text-[#6b7a90]">
                     <p><span># ${data.id}</span> by <span> ${data.author} </span></p>
-                    <p> ${data.createdAt.split("T")[0]} </p>
+                    <p> ${data.createdAt.split("T")[0] ? data.createdAt.split("T")[0] : "No CreatedAt"} </p>
                  </div>
-            </div> 
+            </div>
 
-         
+
          `
         //  status
         const card = issuesCardDiv.querySelector(".issueCard")
@@ -112,36 +112,36 @@ const displayIssueModal = (modals) => {
     modalDiv.innerHTML = `
         <div class="">
             <div class="space-y-5">
-                <h1 class="text-xl md:text-3xl font-bold">${modals.title}</h1>
+                <h1 class="text-xl md:text-3xl font-bold">${modals.title ? modals.title: "NO title"}</h1>
                 <div class="text-sm text-gray-600 flex flex-wrap items-center gap-2">
                     <span class="issueCard font-medium text-[11px] px-2 py-1 rounded-full  text-white">
-                       ${modals.status}
+                       ${modals.status ? modals.status:"No status"}
                     </span>
-                    <span>• Opened by <strong> ${modals.assignee}</strong></span>
+                    <span>• Opened by <strong> ${modals.assignee ? modals.assignee:"No Assignee" }</strong></span>
                     <span>• ${modals.updatedAt.split("T")[0]} </span>
                 </div>
                 <div class="flex items-center gap-2">
                     <p
                         class="px-3 py-1 text-[12px] rounded-2xl border-2 border-[#f6c0c0] font-medium text-[#ef4444] text-center bg-[#feecec] ">
-                        <i class="fa-solid fa-bug"></i><span>${modals.labels[0] ? modals.labels[0] : "No label"}  </span>
+                        <i class="fa-solid fa-bug"></i><span>${modals.labels[0] ? modals.labels[0] : ""}  </span>
                     </p>
                     <p
                         class="px-3 py-1 text-[12px] rounded-2xl border-2 border-[#fde68a] font-medium text-[#d97706] text-center bg-[#fff8db] ">
-                        <i class="fa-solid fa-life-ring"></i><span> ${modals.labels[0] ? modals.labels[0] : "No label"} </span>
+                        <i class="fa-solid fa-life-ring"></i><span> ${modals.labels[1] ? modals.labels[1] : ""} </span>
                     </p>
                 </div>
                 <div>
-                         <p class="font-light text-[#6b7a90]"> ${modals.description}</p>
+                         <p class="font-light text-[#6b7a90]"> ${modals.description ? modals.description : "NO Description" }</p>
                 </div>
                 <div class="grid grid-cols-2 bg-[#f8fafc] py-4 px-2">
                     <div>
                         <p class="font-light text-[#6b7a90]">Assignee:</p>
-                        <h3 class="font-medium">${modals.assignee}</h3>
+                        <h3 class="font-medium">${modals.assignee ? modals.assignee :"No assignee" }</h3>
                     </div>
                     <div>
                         <p class="font-light text-[#6b7a90]">Priority:</p>
                          <p class="issuePriority font-medium text-[11px] text-center w-[70px] px-2 py-1 rounded-full  text-white">
-                       ${modals.priority}
+                       ${modals.priority ? modals.priority : "NO priority" }
                          </p>
                     </div>
                 </div>
@@ -149,7 +149,7 @@ const displayIssueModal = (modals) => {
             </div>
         </div>
 
-        
+
         `;
 
     // satus bg-red-700
