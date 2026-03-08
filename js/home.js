@@ -33,6 +33,28 @@ const displayIssue = (datas) => {
     const issuesContainer = document.getElementById('issues-container');
     issuesContainer.innerHTML = "";
 
+
+    if (datas.length == 0) {
+        issuesContainer.innerHTML = `
+
+        <div class="text-center col-span-4 py-5 md:py-10 space-y-5 bg-gray-200  min-h-[calc(50vh-100px)]  ">
+           <p class="text-xl md:text-5xl text-red-600 font-semibold font-bangla">
+        <i class="fa-regular fa-face-sad-tear"></i>
+
+         </p>
+            <p class="text-xl md:text-5xl text-red-600 font-semibold font-bangla">
+    Sorry, no issues found
+
+         </p>
+        </div>
+
+     `
+        manageSpinner(false)
+        return
+
+    }
+
+
     datas.forEach(data => {
         // console.log(data)
         const issuesCardDiv = document.createElement('div');
@@ -40,11 +62,11 @@ const displayIssue = (datas) => {
            <div onclick="loadIssueModal(${data.id})"  id="card" class="issueCard px-5 py-5 bg-white shadow  space-y-5 rounded-2xl border-t-4">
                  <div class="flex justify-between items-center ">
                     <img class="img-open-close" src="./assets/Open-Status.png" alt="">
-                    <p class="issuePriority px-3 py-1 rounded-2xl  font-medium text-[#ef4444] text-center bg-[#feecec] "><span> ${data.priority ? data.priority:"No Priority"}  </span></p>
+                    <p class="issuePriority px-3 py-1 rounded-2xl  font-medium text-[#ef4444] text-center bg-[#feecec] "><span> ${data.priority ? data.priority : "No Priority"}  </span></p>
                  </div>
                  <div class = "space-y-3">
-                    <h1 class="text-xl md:text-2xl font-bold">${data.title ? data.title:"No title"} </h1>
-                    <p class="font-light line-clamp-2 text-[#6b7a90]">${data.description ? data.description:"No Description"}</p>
+                    <h1 class="text-xl md:text-2xl font-bold">${data.title ? data.title : "No title"} </h1>
+                    <p class="font-light line-clamp-2 text-[#6b7a90]">${data.description ? data.description : "No Description"}</p>
 
                  </div>
                  <div class="flex items-center gap-2">
@@ -112,12 +134,12 @@ const displayIssueModal = (modals) => {
     modalDiv.innerHTML = `
         <div class="">
             <div class="space-y-5">
-                <h1 class="text-xl md:text-3xl font-bold">${modals.title ? modals.title: "NO title"}</h1>
+                <h1 class="text-xl md:text-3xl font-bold">${modals.title ? modals.title : "NO title"}</h1>
                 <div class="text-sm text-gray-600 flex flex-wrap items-center gap-2">
                     <span class="issueCard font-medium text-[11px] px-2 py-1 rounded-full  text-white">
-                       ${modals.status ? modals.status:"No status"}
+                       ${modals.status ? modals.status : "No status"}
                     </span>
-                    <span>• Opened by <strong> ${modals.assignee ? modals.assignee:"No Assignee" }</strong></span>
+                    <span>• Opened by <strong> ${modals.assignee ? modals.assignee : "No Assignee"}</strong></span>
                     <span>• ${modals.updatedAt.split("T")[0]} </span>
                 </div>
                 <div class="flex items-center gap-2">
@@ -131,17 +153,17 @@ const displayIssueModal = (modals) => {
                     </p>
                 </div>
                 <div>
-                         <p class="font-light text-[#6b7a90]"> ${modals.description ? modals.description : "NO Description" }</p>
+                         <p class="font-light text-[#6b7a90]"> ${modals.description ? modals.description : "NO Description"}</p>
                 </div>
                 <div class="grid grid-cols-2 bg-[#f8fafc] py-4 px-2">
                     <div>
                         <p class="font-light text-[#6b7a90]">Assignee:</p>
-                        <h3 class="font-medium">${modals.assignee ? modals.assignee :"No assignee" }</h3>
+                        <h3 class="font-medium">${modals.assignee ? modals.assignee : "No assignee"}</h3>
                     </div>
                     <div>
                         <p class="font-light text-[#6b7a90]">Priority:</p>
                          <p class="issuePriority font-medium text-[11px] text-center w-[70px] px-2 py-1 rounded-full  text-white">
-                       ${modals.priority ? modals.priority : "NO priority" }
+                       ${modals.priority ? modals.priority : "NO priority"}
                          </p>
                     </div>
                 </div>
@@ -259,6 +281,9 @@ document.getElementById("btn_search").addEventListener("click", () => {
             const filterIssues = allIssues.filter((i) =>
                 i.title && i.title.toLowerCase().includes(searchValue)
             );
+
+
+
             displayIssue(filterIssues);
         })
 
